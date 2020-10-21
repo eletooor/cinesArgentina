@@ -1,29 +1,4 @@
-//const rell = require('./controllers/cines.controller');//SOLO PARA CARGAR LA BASE DE DATOS
-const express = require ('express');
-const morgan = require ('morgan');
-const app = express();
 
-const { mongoose } = require('./database');
-
-// Settings
-app.set('port', process.env.PORT || 3000);
-
-// Middlewares
-app.use(morgan('dev'));
-app.use(express.json());
-
-// Routees
-app.use('/api/cines', require('./routes/cines.routes'));
-app.use('/api/users', require('./routes/users.routes'));
-
-// staring the server
-app.listen(app.get('port'), () => {
-    console.log('server on port' , app.get('port'));
-});
-
-
-/*////////CARGA DE BASE DE DATOS///////////
-let arr=
 
 [
     {
@@ -7264,10 +7239,4 @@ let arr=
         "gestion": "Privado independiente",
         "espacio_cinear": "Sí"
     }
-];
-for(let i=0; i<arr.length; i++ ){
-    rell.rellenar(arr[i]);
-    console.log(i);
-}
-
-*/
+]
